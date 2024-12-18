@@ -34,6 +34,7 @@
             @endif
 
             @if(Session::has('warning'))
+                <?php $warning = Session::get('warning'); ?>
                 <div class="general-alert alert alert-warning" role="alert">
                     @if(isset(Session::get('warning')['layout']))
                         <b>Warning!</b> @include('partials.warning.'.Session::get('warning')['layout'], Session::get('warning'))
@@ -46,12 +47,6 @@
             @if(Session::has('error'))
                 <div class="general-alert alert alert-danger" role="alert">
                     <b>Error!</b> {{ Session::get('error') }}
-                </div>
-            @endif
-
-            @if(Session::has('warning'))
-                <div class="general-alert alert alert-warning" role="alert">
-                    <b>Warning:</b> {{ Session::get('warning')}}
                 </div>
             @endif
 
