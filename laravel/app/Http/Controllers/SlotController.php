@@ -104,7 +104,7 @@ class SlotController extends Controller
             $concurrent_slot_warning = $this->warnIfConcurrentSlotForUserExists($request, $slot, Auth::user());
             if($concurrent_slot_warning)
             {
-                return back();
+                return redirect()->back();
             }
 
             $slot->user_id = Auth::user()->id;
@@ -197,7 +197,7 @@ class SlotController extends Controller
             $concurrent_slot_warning = $this->warnIfConcurrentSlotForUserExists($request, $slot, $user, true);
             if($concurrent_slot_warning)
             {
-                return back();
+                return redirect()->back();
             }
 
             $slot->user_id=$user->id;
