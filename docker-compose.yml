@@ -21,7 +21,7 @@ services:
       - db
 
   webserver:
-    container_name: voildb-nginx
+    container_name: voldb-nginx
     image: nginx:alpine
     restart: unless-stopped
     ports: 
